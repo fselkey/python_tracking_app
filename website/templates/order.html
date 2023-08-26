@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+{% block title %}Order Page{% endblock %}
+{% block content %}
+
+<div>
+  <h1>Order</h1>
+  <p>Order ID: {{ order.id }}</p>
+  <p>Client ID: {{ order.user_id }}</p>
+  <p>SO: {{ order.so_num }}</p>
+  <p>PO: {{ order.po_num }}</p>
+  <p>{{ order.date }}</p>
+  <button type="button" class="close" onClick="deleteOrder( {{ order.id }} )">
+    Delete Order
+  </button>
+</div>
+
+<div>
+  <h2>Order Tracking</h2>
+  <p>Track ID: {{ track.id }}</p>
+  <p>User ID: {{ track.user_id }}</p>
+  <p>Order ID: {{ track.order_id }}</p>
+  <p>Received: {{ track.received }}</p>
+  <p>tested: {{ track.tested }}</p>
+  <p>shipped: {{ track.shipped }}</p>
+  <p>location: {{ track.location }}</p>
+  <p>Last Update: {{ track.last_update }}</p>
+</div>
+
+
+{% endblock %}

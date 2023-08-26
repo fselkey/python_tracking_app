@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block track_card %}
+
+<div>
+  <p>Track ID: {{ track.id }}</p>
+  <p>User ID: {{ track.user_id }}</p>
+  <p>Order ID: {{ track.order_id }}</p>
+  <p>Received: {{ track.received }}</p>
+  <p>tested: {{ track.tested }}</p>
+  <p>shipped: {{ track.shipped }}</p>
+  <p>location: {{ track.location }}</p>
+  <p>Last Update: {{ track.last_update }}</p>
+</div>
+
+{% endblock %}

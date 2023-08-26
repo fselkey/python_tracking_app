@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Tracks{% endblock %}
+{% block content %}
+
+<div>
+  <h1 align="center">Tracks</h1>
+
+  <ul class="list-group list-group-flush" id="tracks">
+    {% for track in user.tracks %}
+
+    <li class="list-group-item">
+      <div>
+        <p>Track ID: {{ track.id }}</p>
+        <p>User ID: {{ track.user_id }}</p>
+        <p>Order ID: {{ track.order_id }}</p>
+        <p>Received: {{ track.received }}</p>
+        <p>tested: {{ track.tested }}</p>
+        <p>shipped: {{ track.shipped }}</p>
+        <p>location: {{ track.location }}</p>
+        <p>Last Update: {{ track.last_update }}</p>
+      </div>
+
+      <button type="button" class="close" onClick="deleteTrack({{track.id}})">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}

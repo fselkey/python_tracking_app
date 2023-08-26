@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div>
+
+  <form method="POST" id="edit-track-form">
+    <h3 align="center">Track</h3>
+
+    <div class="form-group">
+      <input type="checkbox" class="form-control" id="received" name="received" {% if track.received == True  %} checked {% else %} unchecked {% endif %} value="{{ track.received }}"/>
+      <label for="received"> Product Received </label><br>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" class="form-control" id="tested" name="tested"  {% if track.tested == True  %} checked {% else %} unchecked {% endif %} value="{{ track.tested }}"/>
+      <label for="tested"> All Tests Complete </label><br>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" class="form-control" id="shipped" name="shipped"  {% if track.shipped == True  %} checked {% else %} unchecked {% endif %} value="{{ track.shipped }}"/>
+      <label for="shipped"> Product Shipped </label><br>
+    </div>
+
+
+    <div class="form-group">
+      <label for="cars">Choose a location:</label>
+      <select name="location" id="location" form="edit-track-form" value="{{ track.location }}">
+        <option value="receiving" {% if track.location == 'receiving' %}selected{% endif %}>Receiving</option>
+        <option value="visual" {% if track.location == 'visual' %}selected{% endif %}>Visual</option>
+        <option value="xray" {% if track.location == 'xray' %}selected{% endif %}>X-ray</option>
+        <option value="electrical" {% if track.location == 'electrical' %}selected{% endif %}>Electrical</option>
+        <option value="shipping" {% if track.location == 'shipping' %}selected{% endif %}>Shipping</option>
+      </select>
+    </div>
+
+
+
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
+
+
+<div>
+  <p>Track ID: {{ track.id }}</p>
+  <p>User ID: {{ track.user_id }}</p>
+  <p>Order ID: {{ track.order_id }}</p>
+  <p>Received: {{ track.received }}</p>
+  <p>tested: {{ track.tested }}</p>
+  <p>shipped: {{ track.shipped }}</p>
+  <p>location: {{ track.location }}</p>
+  <p>Last Update: {{ track.last_update }}</p>
+</div>
+
+{% endblock %}

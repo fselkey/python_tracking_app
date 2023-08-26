@@ -1,0 +1,34 @@
+
+{% extends "base.html" %}
+{% block title %}Order Page{% endblock %}
+{% block content %}
+
+
+<form method="POST">
+  <h3 align="center">Order</h3>
+
+  <div class="form-group">
+    <label for="so_num">SO Number</label>
+    <input
+      type="text"
+      class="form-control"
+      id="so_num"
+      name="so_num"
+      placeholder="Enter SO number"
+    />
+  </div>
+  <div class="form-group">
+    <label for="po_num">PO Number</label>
+    <input
+      type="text"
+      class="form-control"
+      id="po_num"
+      name="po_num"
+      placeholder="Enter PO number"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
